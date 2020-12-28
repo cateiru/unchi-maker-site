@@ -1,9 +1,11 @@
 import Page from '../components/Page'
+import Unchi from '../components/Unchi'
 
 function HomePage() {
+
   return (
     <Page>
-      <div>Hello World</div>
+      <Unchi />
     </Page>
   )
 }
