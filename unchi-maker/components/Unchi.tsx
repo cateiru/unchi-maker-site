@@ -25,16 +25,16 @@ export default class Unchi extends React.Component<Props, State>{
     this.showText = this.showText.bind(this)
 
     this.state = {
-      text: '',
+      text: 'ある日の暮方の事である。一人の下人が、羅生門の下で雨やみを待っていた。',
       error: null,
       isLoaded: false,
-      item: {formatted_text: ''},
+      item: {formatted_text: 'あるうんちのうんちのうんちである。うんちうんちのうんちが、うんちのうんちでうんちうんちを待っていた。'},
       copied: false,
       url: props.url
     }
   }
 
-  updateText(event: React.ChangeEvent<HTMLInputElement>){
+  updateText(event: React.ChangeEvent<HTMLTextAreaElement>){
     this.setState(() => ({
       text: event.target.value
     }))
@@ -78,29 +78,35 @@ export default class Unchi extends React.Component<Props, State>{
     return (
       <div className="unchi">
         <div className="inputForm">
-        <input type="text" value={this.state.text} onChange={this.updateText} />
+        <textarea value={this.state.text} onChange={this.updateText} />
+        </div>
         <div className="convertButton">
           <button onClick={this.convert}>
             変換する
           </button>
         </div>
-        </div>
         <div className="resultValue">
-          {this.showText()}
+        <textarea value={this.showText()} />
         </div>
         <div className="share">
-          <CopyToClipBoard text={this.state.item.formatted_text} onCopy={() => this.setState({copied: true})}>
-            <button className="copyButton">
-              <Image src="/Copy.svg" alt="Clipboard" width={50} height={50} />
-              {this.state.copied ? <div className="copied">コピーした！</div> : <div>コピー</div>}
-              </button>
-          </CopyToClipBoard>
-          <TwitterShareButton url={this.state.url} title={this.state.item.formatted_text} hashtags={["うんちメーカー"]}>
-            <button className="twitterbutton">
-              <Image src="/Twitter.svg" alt="TwitterShare" width={50} height={50} />
-              ツイート
-            </button>
-          </TwitterShareButton>
+          <ul>
+            <li>
+              <CopyToClipBoard text={this.state.item.formatted_text} onCopy={() => this.setState({copied: true})}>
+                <button className="copyButton">
+                  <Image className="shareImage" src="/Copy.svg" alt="Clipboard" width={50} height={50} />
+                  {this.state.copied ? <span className="copied">コピーした</span> : <span>コピーする</span>}
+                  </button>
+              </CopyToClipBoard>
+            </li>
+            <li>
+              <TwitterShareButton url={this.state.url} title={this.state.item.formatted_text} hashtags={["うんちメーカー"]}>
+                <button className="twitterbutton">
+                  <Image className="shareImage" src="/Twitter.svg" alt="TwitterShare" width={30} height={30} />
+                  <span>ツイート</span>
+                </button>
+              </TwitterShareButton>
+            </li>
+          </ul>
         </div>
       </div>
     )

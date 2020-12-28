@@ -7,16 +7,18 @@ export default function Header() {
         <ul>
           <li>
             <Link href="/">
-              <a>Home</a>
+              <a>ホーム</a>
             </Link>
-          </li>
-          <li>
-            <a href="https://github.com/yuto51942/unchi-maker-site" target="_blank" rel="noopener noreferrer">ソースコード</a>
           </li>
           <li>
             <Link href="/license">
-              <a>License</a>
+              <a>ライセンス</a>
             </Link>
+          </li>
+          <li>
+            <a href="https://github.com/yuto51942/unchi-maker-site" target="_blank" rel="noopener noreferrer">
+              <u>ソースコード</u>
+            </a>
           </li>
         </ul>
       </nav>

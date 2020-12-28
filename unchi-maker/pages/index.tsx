@@ -4,7 +4,7 @@ import Unchi from '../components/Unchi'
 function HomePage() {
   return (
     <Page>
-      <Unchi url={window.location.href} />
+      <Unchi url={'https://example.com'} />
     </Page>
   )
 }

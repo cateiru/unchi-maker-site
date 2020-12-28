@@ -1,0 +1,157 @@
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+header {
+  border-right: none;
+  display: inline-block;
+  width: 100%;
+}
+
+header ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  text-align: center;
+}
+
+header li {
+  display: inline-block;
+}
+
+header a {
+  text-decoration: none;
+  padding: 1rem 2rem 1rem 2rem;
+  color: #e3e3e3;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+.title {
+  text-align: center;
+  font-size: 2rem;
+  padding: 1rem;
+  margin: 0;
+  color: #e3e3e3;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 700;
+}
+
+.titleAndHeader {
+  background-color: #b58360;
+  margin: 0;
+}
+
+.unchi {
+  background-color: white;
+}
+
+.inputForm{
+  margin: 0;
+  padding: 2rem 0 1rem 0;
+  text-align: center;
+}
+
+.resultValue {
+  margin: 0;
+  padding: 1rem 0 2rem 0;
+  text-align: center;
+}
+
+.inputForm textarea, .resultValue textarea {
+  outline: none;
+  border: 3px solid black;
+  border-radius: 5px;
+  background-color: white;
+  padding: .5rem;
+  height: 6rem;
+  width: 80%;
+  font-size: 1.2rem;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 400;
+}
+
+.convertButton {
+  text-align: center;
+  margin: 0;
+  padding: .5rem;
+}
+
+.convertButton button {
+  font-size: 1.5rem;
+  border: 1px solid white;
+  border-radius: .5rem;
+  background-color: #b58360;
+  color: white;
+  padding: .5rem;
+  width: 135px;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+.share {
+  width: 100%;
+  text-align: center;
+}
+
+.share ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.share li {
+  display: inline-block;
+  margin: 0;
+  padding: 0 1rem 0 1rem;
+}
+
+.shareImage, .share img {
+  width: 1rem;
+}
+
+.share button {
+  font-size: 1.2rem;
+  border: 1px solid white;
+  border-radius: .5rem;
+  background-color: #b58360;
+  color: white;
+  width: 135px;
+  height: 50px;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+footer {
+  text-align: right;
+  font-size: 10px;
+  margin: 1rem;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+.licenses {
+  margin: 1rem;
+}
+
+.licenseObj {
+  margin: 2rem;
+}
+
+.licenseObj .name {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-left: 1rem;
+}
+
+.licenseObj pre {
+  white-space: pre-line;
+}
+
+.licenseObj .code {
+  background-color: #e3e3e3;
+  padding: 1rem;
+  border-radius: 1rem;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 400;
+  white-space: pre-line;
+}
