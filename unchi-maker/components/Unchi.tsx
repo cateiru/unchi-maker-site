@@ -1,6 +1,7 @@
 import React from 'react'
 import CopyToClipBoard from 'react-copy-to-clipboard'
 import {TwitterShareButton, TwitterIcon} from 'react-share'
+import Image from 'next/image'
 
 interface State {
   text: string
@@ -78,22 +79,27 @@ export default class Unchi extends React.Component<Props, State>{
       <div className="unchi">
         <div className="inputForm">
         <input type="text" value={this.state.text} onChange={this.updateText} />
-        <button onClick={this.convert}>
-          Click
-        </button>
+        <div className="convertButton">
+          <button onClick={this.convert}>
+            変換する
+          </button>
+        </div>
         </div>
         <div className="resultValue">
           {this.showText()}
         </div>
-        <div>
-          <CopyToClipBoard text={this.state.item.formatted_text}
-            onCopy={() => this.setState({copied: true})}>
-              <button className="copyButton">
-                {this.state.copied ? <div className="copied">コピーした！</div> : <div>コピー</div>}
+        <div className="share">
+          <CopyToClipBoard text={this.state.item.formatted_text} onCopy={() => this.setState({copied: true})}>
+            <button className="copyButton">
+              <Image src="/Copy.svg" alt="Clipboard" width={50} height={50} />
+              {this.state.copied ? <div className="copied">コピーした！</div> : <div>コピー</div>}
               </button>
           </CopyToClipBoard>
           <TwitterShareButton url={this.state.url} title={this.state.item.formatted_text} hashtags={["うんちメーカー"]}>
-            <TwitterIcon round={true} />
+            <button className="twitterbutton">
+              <Image src="/Twitter.svg" alt="TwitterShare" width={50} height={50} />
+              ツイート
+            </button>
           </TwitterShareButton>
         </div>
       </div>
