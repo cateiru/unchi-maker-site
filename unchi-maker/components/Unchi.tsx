@@ -7,11 +7,16 @@ interface State {
   error: Error
   isLoaded: boolean
   item: {formatted_text: string}
-  copied: boolean
+  copied: boolean,
+  url: string
 }
 
-export default class Unchi extends React.Component<{}, State>{
-  constructor(props: {}){
+interface Props {
+  url: string
+}
+
+export default class Unchi extends React.Component<Props, State>{
+  constructor(props: Props){
     super(props)
 
     this.updateText = this.updateText.bind(this)
@@ -23,7 +28,8 @@ export default class Unchi extends React.Component<{}, State>{
       error: null,
       isLoaded: false,
       item: {formatted_text: ''},
-      copied: false
+      copied: false,
+      url: props.url
     }
   }
 
@@ -86,7 +92,7 @@ export default class Unchi extends React.Component<{}, State>{
                 {this.state.copied ? <div className="copied">コピーした！</div> : <div>コピー</div>}
               </button>
           </CopyToClipBoard>
-          <TwitterShareButton url={'http://localhost:3000/'} title={this.state.item.formatted_text} hashtags={["うんちメーカー"]}>
+          <TwitterShareButton url={this.state.url} title={this.state.item.formatted_text} hashtags={["うんちメーカー"]}>
             <TwitterIcon round={true} />
           </TwitterShareButton>
         </div>

@@ -2,10 +2,9 @@ import Page from '../components/Page'
 import Unchi from '../components/Unchi'
 
 function HomePage() {
-
   return (
     <Page>
-      <Unchi />
+      <Unchi url={window.location.href} />
     </Page>
   )
 }
